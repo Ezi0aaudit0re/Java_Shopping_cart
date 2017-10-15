@@ -5,20 +5,44 @@
  *  * Sort the array of items 
  *  * Shop with the money we have 
  *  * Print the end result 
+ *  @author Aman Nagpal
+ *  @version 1.0
  *
  **/
 
 
 
 public class Driver{
+
     public static void main (String[] args) {
+        boolean DEBUG = false;
         Logic logic = new Logic();
         
         // instantiate an empty array of objects 
-        logic.initializeItems();
+        //logic.initializeItems();
 
         // fill the array with values
-        logic.fillItemsArray();
+        if(DEBUG){
+            logic.fillDummyArray(); 
+        }
+        else{
+            logic.fillItemsArray();
+        }
+
+        // Sort the Items in assendiong order
+        logic.sortItems();
+
+        // assign HardCoded Prices
+        logic.assignPrice();
+
+        // go shopping
+        logic.shopping();
+
+        // print the information
+        logic.print();
+
+        System.out.println("The program has ended quiting the program");
+
     }
 
 
